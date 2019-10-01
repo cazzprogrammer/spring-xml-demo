@@ -30,6 +30,5 @@ public class Main
         System.out.println(mob1.toString());
 
 
-
     }
 }
