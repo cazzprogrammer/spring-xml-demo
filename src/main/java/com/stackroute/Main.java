@@ -22,27 +22,13 @@ public class Main
     {
         //Using Applicationcontext
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Movie mob = (Movie)context.getBean("MovieA");
+        Movie mob = (Movie)context.getBean("movie");
         System.out.println(mob.toString());
 
         //ApplicationContext context1 = new ClassPathXmlApplicationContext("beans.xml");
-        Movie mob1 = (Movie)context.getBean("MovieB");
+        Movie mob1 = (Movie)context.getBean("movieA");
         System.out.println(mob1.toString());
-        System.out.println("Comparing two beans after changing the scope of Movie bean");
-        System.out.println(mob1 == mob);
 
-       ClassPathResource resource = new ClassPathResource("beans.xml");
-        BeanFactory factory = new XmlBeanFactory(resource);
-        Movie mob2 = (Movie) factory.getBean("movie2");
-        System.out.println(mob2.toString());
-
-        //BeanDefinitionRegistry and BeanDefinitionReader
-
-        BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
-        BeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
-        beanDefinitionReader.loadBeanDefinitions(new ClassPathResource("beans.xml"));
-        Movie mob3 = ((DefaultListableBeanFactory)beanDefinitionRegistry).getBean(Movie.class);
-        System.out.println(mob3.toString());
 
 
     }

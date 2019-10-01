@@ -4,6 +4,9 @@ public class Actor {
 
     private String name,gender;
     private int age;
+    public Actor(){
+
+    }
 
     public Actor(String name,String gender, int age)
     {
